@@ -1,0 +1,36 @@
+{
+  "name": "todo-server",
+  "version": "1.0.0",
+  "description": "Todo App backend using Express.js/MySQL",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/app.js --exec  \"npm run lint && node\"",
+    "lint": "eslint src/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jdkoeh79/todo-server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jdkoeh79/todo-server/issues"
+  },
+  "homepage": "https://github.com/jdkoeh79/todo-server#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "eslint": "^5.6.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.4"
+  }
+}
