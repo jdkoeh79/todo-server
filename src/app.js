@@ -2,6 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const morgan = require('morgan')
+const config = require('../configs')
 
 const app = express()
 
@@ -11,8 +12,9 @@ app.use(cors())
 
 require('./routes')(app)
 
-const port = process.env.PORT || 8081
+const hostname = config.hostname
+const port = config.port
 
 app.listen(port, () => {
-  console.log(`Server listening on port ${port}...`)
+  console.log(`Server listening on http://${hostname}:${port}...`)
 })
