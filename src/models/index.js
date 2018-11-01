@@ -12,18 +12,17 @@ conn.connect(function (err) {
 
 module.exports = {
 
-  sync: function (arg) {
+  sync: async function (arg) {
     if (arg.force) {
-      fs
-        .readdirSync(__dirname)
+      const files = fs.readdirSync(__dirname)
         .filter((file) =>
           file !== 'index.js'
         )
-        .forEach((file) => {
-          const table = require('./' + file)
-          table.down(conn)
-          table.up(conn)
-        })
+      for (const file of files) {
+        const model = require('./' + file)
+        await model.down(conn)
+        await model.up(conn)
+      }
     }
   }
 

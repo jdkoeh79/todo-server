@@ -17,10 +17,8 @@ const hostname = config.hostname
 const port = config.port
 
 db.sync({ force: true })
-// .then(() => {
-
-// })
-
-app.listen(port, () => {
-  console.log(`Server listening on http://${hostname}:${port}...`)
-})
+  .then(() => {
+    app.listen(port, () => {
+      console.log(`Server listening on http://${hostname}:${port}...`)
+    })
+  })
