@@ -1,14 +1,5 @@
-const config = require('../../configs')
-const mysql = require('mysql')
 const fs = require('fs')
-
-const conn = mysql.createConnection(config.db)
-
-conn.connect(function (err) {
-  if (err) {
-    return console.error('Error connecting to database: ' + err.stack)
-  }
-})
+const dbConn = require('../db')
 
 module.exports = {
 
@@ -20,8 +11,8 @@ module.exports = {
         )
       for (const file of files) {
         const model = require('./' + file)
-        await model.down(conn)
-        await model.up(conn)
+        await model.down(dbConn)
+        await model.up(dbConn)
       }
     }
   }

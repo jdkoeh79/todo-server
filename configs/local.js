@@ -6,7 +6,8 @@ let localConfig = {
     user: 'root',
     password: 'password',
     database: 'todo'
-  }
+  },
+  jwtSecret: 'secret'
 }
 
 module.exports = localConfig
