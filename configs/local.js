@@ -2,10 +2,16 @@ let localConfig = {
   hostname: 'localhost',
   port: 8081,
   db: {
-    host: '127.0.0.1',
-    user: 'todo',
-    password: 'todo',
-    database: 'todo'
+    database: 'todo',
+    user: 'root',
+    password: 'password',
+    options: {
+      host: '127.0.0.1',
+      dialect: 'mysql'
+    }
+  },
+  authentication: {
+    jwtSecret: 'secret'
   }
 }
 
