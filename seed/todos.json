@@ -1,0 +1,52 @@
+[
+  {
+    "userId": 1,
+    "title": "Go Grocery Shopping",
+    "completed": false,
+    "priority": "Normal",
+    "dueDate": null,
+    "dueTime": null,
+    "recurring": null,
+    "note": "Get the cheese at Aldi."
+  },
+  {
+    "userId": 1,
+    "title": "Edit Christmas Footage",
+    "completed": false,
+    "priority": "Low",
+    "dueDate": null,
+    "dueTime": null,
+    "recurring": null,
+    "note": null
+  },
+  {
+    "userId": 1,
+    "title": "Management Meeting",
+    "completed": false,
+    "priority": "High",
+    "dueDate": "2019-01-19",
+    "dueTime": "2019-01-19 15:30:00",
+    "recurring": "Weekly",
+    "note": "(555) 867-5309"
+  },
+  {
+    "userId": 1,
+    "title": "Pick up dry-cleaning",
+    "completed": false,
+    "priority": "Low",
+    "dueDate": null,
+    "dueTime": null,
+    "recurring": null,
+    "note": "Ticket #: 687685416"
+  },
+  {
+    "userId": 1,
+    "title": "Pay Electric Bill",
+    "completed": true,
+    "priority":"'Normal",
+    "dueDate": "'2019-01-28",
+    "dueTime": null,
+    "recurring": "'Monthly",
+    "note": "www.electric-company.com"
+  }
+]
