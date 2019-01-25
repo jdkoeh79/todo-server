@@ -27,6 +27,10 @@ module.exports = (sequelize, DataTypes) => {
     note: {
       type: DataTypes.TEXT,
       defaultValue: null
+    },
+    items: {
+      type: DataTypes.JSON,
+      defaultValue: null
     }
   })
 

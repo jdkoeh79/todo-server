@@ -1,5 +1,5 @@
 const passport = require('passport')
-const { Users } = require('./models')
+const { User } = require('./models')
 const JwtStrategy = require('passport-jwt').Strategy
 const ExtractJwt = require('passport-jwt').ExtractJwt
 const config = require('../configs')
@@ -14,7 +14,7 @@ passport.use(
     options,
     async function (jwtPayload, done) {
       try {
-        const user = await Users.findOne({
+        const user = await User.findOne({
           where: {
             id: jwtPayload.id
           }

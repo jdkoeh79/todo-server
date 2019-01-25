@@ -7,7 +7,19 @@
     "dueDate": null,
     "dueTime": null,
     "recurring": null,
-    "note": "Get the cheese at Aldi."
+    "note": "Get the cheese at Aldi.",
+    "items": [
+      {"name": "Milk", "completed": false},
+      {"name": "Eggs", "completed": true},
+      {"name": "Cheese", "completed": false},
+      {"name": "Bread", "completed": false},
+      {"name": "Oranges", "completed": false},
+      {"name": "Bananas", "completed": false},
+      {"name": "Peanut Butter", "completed": false},
+      {"name": "Cereal", "completed": false},
+      {"name": "Steak", "completed": false},
+      {"name": "Beer", "completed": false }
+    ]
   },
   {
     "userId": 1,
@@ -43,10 +55,10 @@
     "userId": 1,
     "title": "Pay Electric Bill",
     "completed": true,
-    "priority":"'Normal",
-    "dueDate": "'2019-01-28",
+    "priority": "Normal",
+    "dueDate": "2019-01-28",
     "dueTime": null,
-    "recurring": "'Monthly",
+    "recurring": "Monthly",
     "note": "www.electric-company.com"
   }
 ]
