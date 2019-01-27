@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     priority: {
       type: DataTypes.STRING,
-      defaultValue: 'low'
+      defaultValue: 'Low'
     },
     dueDate: {
       type: DataTypes.DATE,

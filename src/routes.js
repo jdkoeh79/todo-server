@@ -17,4 +17,7 @@ module.exports = (app) => {
   app.get('/todos',
     isAuthenticated,
     TodosController.index)
+  app.post('/todos',
+    isAuthenticated,
+    TodosController.createNewTodo)
 }

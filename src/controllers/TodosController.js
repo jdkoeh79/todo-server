@@ -22,5 +22,20 @@ module.exports = {
         error: err.message
       })
     }
+  },
+  async createNewTodo (req, res) {
+    try {
+      const userId = req.user.id
+      const todoTitle = req.body.title
+      const todo = await Todo.create({
+        userId: userId,
+        title: todoTitle
+      })
+      res.send(todo)
+    } catch (err) {
+      res.status(500).send({
+        error: err.message
+      })
+    }
   }
 }
