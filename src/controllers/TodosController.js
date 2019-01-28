@@ -2,11 +2,11 @@ const { Todo } = require('../models')
 
 module.exports = {
   async index (req, res) {
+    const userId = req.user.id
+    const where = {
+      userId: userId
+    }
     try {
-      const userId = req.user.id
-      const where = {
-        userId: userId
-      }
       await Todo.findAll({
         where: where
       }).then((todos) => {
@@ -24,9 +24,9 @@ module.exports = {
     }
   },
   async createNewTodo (req, res) {
+    const userId = req.user.id
+    const todoTitle = req.body.title
     try {
-      const userId = req.user.id
-      const todoTitle = req.body.title
       const todo = await Todo.create({
         userId: userId,
         title: todoTitle
@@ -35,6 +35,24 @@ module.exports = {
     } catch (err) {
       res.status(500).send({
         error: err.message
+      })
+    }
+  },
+  async deleteTodo (req, res) {
+    const todoId = req.body.todoId
+    try {
+      await Todo.destroy({
+        where:
+        {
+          id: todoId
+        }
+      }).then(deletedTodo => {
+        console.log('1 = deleted, 0 = not deleted:', deletedTodo)
+      })
+      res.status(204)
+    } catch (err) {
+      res.status(500).send({
+        error: 'delete todo error: ' + err.message
       })
     }
   }

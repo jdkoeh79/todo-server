@@ -20,4 +20,7 @@ module.exports = (app) => {
   app.post('/todos',
     isAuthenticated,
     TodosController.createNewTodo)
+  app.delete('/todos',
+    isAuthenticated,
+    TodosController.deleteTodo)
 }
