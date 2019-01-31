@@ -8,6 +8,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.BOOLEAN,
       defaultValue: false
     },
+    archived: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    },
     priority: {
       type: DataTypes.STRING,
       defaultValue: 'Low'

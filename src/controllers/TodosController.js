@@ -4,7 +4,8 @@ module.exports = {
   async index (req, res) {
     const userId = req.user.id
     const where = {
-      userId: userId
+      userId: userId,
+      archived: false
     }
     try {
       await Todo.findAll({
@@ -34,7 +35,7 @@ module.exports = {
       res.send(todo)
     } catch (err) {
       res.status(500).send({
-        error: err.message
+        error: 'create todo error ' + err.message
       })
     }
   },
@@ -46,13 +47,54 @@ module.exports = {
         {
           id: todoId
         }
-      }).then(deletedTodo => {
-        console.log('1 = deleted, 0 = not deleted:', deletedTodo)
+      }).then(result => {
+        console.log('0 = fail, 1 = success:', result)
       })
-      res.status(204)
+      res.status(200)
     } catch (err) {
       res.status(500).send({
         error: 'delete todo error: ' + err.message
+      })
+    }
+  },
+  async updateCompletedStatus (req, res) {
+    const todoId = req.body.todoId
+    const completed = req.body.completed
+    try {
+      await Todo.update({
+        completed: completed
+      }, {
+        where: {
+          id: todoId
+        }
+      }).then(result => {
+        console.log('0 = fail, 1 = success:', result)
+        res.status(200)
+      })
+    } catch (err) {
+      res.status(500).send({
+        error: 'update todo completed status server error: ' + err.message
+      })
+    }
+  },
+  async updateArchivedStatus (req, res) {
+    const todoId = req.body.todoId
+    const archived = req.body.archived
+    try {
+      await Todo.update({
+        archived: archived
+      }, {
+        where:
+        {
+          id: todoId
+        }
+      }).then(result => {
+        console.log('0 = fail, 1 = success:', result)
+        res.status(200)
+      })
+    } catch (err) {
+      res.status(500).send({
+        error: 'update todo archived status server error: ' + err.message
       })
     }
   }

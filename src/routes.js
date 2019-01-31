@@ -23,4 +23,12 @@ module.exports = (app) => {
   app.delete('/todos',
     isAuthenticated,
     TodosController.deleteTodo)
+
+  app.put('/todo/completed',
+    isAuthenticated,
+    TodosController.updateCompletedStatus)
+
+  app.put('/todo/archived',
+    isAuthenticated,
+    TodosController.updateArchivedStatus)
 }
