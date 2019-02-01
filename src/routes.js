@@ -31,4 +31,8 @@ module.exports = (app) => {
   app.put('/todo/archived',
     isAuthenticated,
     TodosController.updateArchivedStatus)
+
+  app.put('/todo/priority',
+    isAuthenticated,
+    TodosController.updatePriority)
 }

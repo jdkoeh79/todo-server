@@ -97,5 +97,26 @@ module.exports = {
         error: 'update todo archived status server error: ' + err.message
       })
     }
+  },
+  async updatePriority (req, res) {
+    const todoId = req.body.todoId
+    const priority = req.body.priority
+    try {
+      await Todo.update({
+        priority: priority
+      }, {
+        where:
+        {
+          id: todoId
+        }
+      }).then(result => {
+        console.log('0 = fail, 1 = success:', result)
+        res.status(200)
+      })
+    } catch (err) {
+      res.status(500).send({
+        error: 'update todo priority server error: ' + err.message
+      })
+    }
   }
 }
