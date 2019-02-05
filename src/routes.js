@@ -35,4 +35,8 @@ module.exports = (app) => {
   app.put('/todo/priority',
     isAuthenticated,
     TodosController.updatePriority)
+
+  app.put('/todo/dueDate',
+    isAuthenticated,
+    TodosController.updateDueDate)
 }
