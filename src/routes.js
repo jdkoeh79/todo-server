@@ -39,4 +39,8 @@ module.exports = (app) => {
   app.put('/todo/dueDate',
     isAuthenticated,
     TodosController.updateDueDate)
+
+  app.put('/todo/dueTime',
+    isAuthenticated,
+    TodosController.updateDueTime)
 }

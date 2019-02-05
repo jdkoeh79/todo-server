@@ -139,5 +139,26 @@ module.exports = {
         error: 'update todo due date server error: ' + err.message
       })
     }
+  },
+  async updateDueTime (req, res) {
+    const todoId = req.body.todoId
+    const dueTime = req.body.dueTime
+    try {
+      await Todo.update({
+        dueTime: dueTime
+      }, {
+        where:
+        {
+          id: todoId
+        }
+      }).then(result => {
+        console.log('0 = fail, 1 = success:', result)
+        res.status(200)
+      })
+    } catch (err) {
+      res.status(500).send({
+        error: 'update todo due date server error: ' + err.message
+      })
+    }
   }
 }
