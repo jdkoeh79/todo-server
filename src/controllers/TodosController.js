@@ -160,5 +160,26 @@ module.exports = {
         error: 'update todo due date server error: ' + err.message
       })
     }
+  },
+  async updateNote (req, res) {
+    const todoId = req.body.todoId
+    const note = req.body.note
+    try {
+      await Todo.update({
+        note: note
+      }, {
+        where:
+        {
+          id: todoId
+        }
+      }).then(result => {
+        console.log('0 = fail, 1 = success:', result)
+        res.status(200)
+      })
+    } catch (err) {
+      res.status(500).send({
+        error: 'update todo note server error: ' + err.message
+      })
+    }
   }
 }
