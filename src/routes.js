@@ -47,4 +47,8 @@ module.exports = (app) => {
   app.put('/todo/note',
     isAuthenticated,
     TodosController.updateNote)
+
+  app.put('/todo/items',
+    isAuthenticated,
+    TodosController.updateItems)
 }

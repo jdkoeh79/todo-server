@@ -48,7 +48,11 @@ module.exports = {
           id: todoId
         }
       }).then(result => {
+        let success = (result[0] === 1)
         console.log('0 = fail, 1 = success:', result)
+        res.status(200).send({
+          success: success
+        })
       })
       res.status(200)
     } catch (err) {
@@ -68,8 +72,11 @@ module.exports = {
           id: todoId
         }
       }).then(result => {
+        let success = (result[0] === 1)
         console.log('0 = fail, 1 = success:', result)
-        res.status(200)
+        res.status(200).send({
+          success: success
+        })
       })
     } catch (err) {
       res.status(500).send({
@@ -89,8 +96,11 @@ module.exports = {
           id: todoId
         }
       }).then(result => {
+        let success = (result[0] === 1)
         console.log('0 = fail, 1 = success:', result)
-        res.status(200)
+        res.status(200).send({
+          success: success
+        })
       })
     } catch (err) {
       res.status(500).send({
@@ -110,8 +120,11 @@ module.exports = {
           id: todoId
         }
       }).then(result => {
+        let success = (result === 1)
         console.log('0 = fail, 1 = success:', result)
-        res.status(200)
+        res.status(200).send({
+          success: success
+        })
       })
     } catch (err) {
       res.status(500).send({
@@ -131,8 +144,11 @@ module.exports = {
           id: todoId
         }
       }).then(result => {
+        let success = (result[0] === 1)
         console.log('0 = fail, 1 = success:', result)
-        res.status(200)
+        res.status(200).send({
+          success: success
+        })
       })
     } catch (err) {
       res.status(500).send({
@@ -152,8 +168,11 @@ module.exports = {
           id: todoId
         }
       }).then(result => {
+        let success = (result[0] === 1)
         console.log('0 = fail, 1 = success:', result)
-        res.status(200)
+        res.status(200).send({
+          success: success
+        })
       })
     } catch (err) {
       res.status(500).send({
@@ -173,8 +192,35 @@ module.exports = {
           id: todoId
         }
       }).then(result => {
+        let success = (result[0] === 1)
         console.log('0 = fail, 1 = success:', result)
-        res.status(200)
+        res.status(200).send({
+          success: success
+        })
+      })
+    } catch (err) {
+      res.status(500).send({
+        error: 'update todo note server error: ' + err.message
+      })
+    }
+  },
+  async updateItems (req, res) {
+    const todoId = req.body.todoId
+    const items = req.body.items
+    try {
+      await Todo.update({
+        items: items
+      }, {
+        where:
+        {
+          id: todoId
+        }
+      }).then(result => {
+        let success = (result[0] === 1)
+        console.log('0 = fail, 1 = success:', result)
+        res.status(200).send({
+          success: success
+        })
       })
     } catch (err) {
       res.status(500).send({
