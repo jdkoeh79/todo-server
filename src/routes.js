@@ -1,6 +1,7 @@
 const AuthenticationController = require('./controllers/AuthenticationController')
 const isAuthenticated = require('./policies/isAuthenticated')
 const TodosController = require('./controllers/TodosController')
+const CategoriesController = require('./controllers/CategoriesController')
 
 module.exports = (app) => {
   app.post('/wave', (req, res) => {
@@ -51,4 +52,8 @@ module.exports = (app) => {
   app.put('/todo/items',
     isAuthenticated,
     TodosController.updateItems)
+
+  app.get('/categories',
+    isAuthenticated,
+    CategoriesController.index)
 }

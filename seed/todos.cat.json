@@ -49,7 +49,11 @@
     "dueTime": "2019-01-19 15:30:00",
     "recurring": "Weekly",
     "note": "(555) 867-5309",
-    "categories": ["Work"]
+    "categories": [
+      {
+        "name": "Work"
+      }
+    ]
   },
   {
     "id": 4,
@@ -62,7 +66,11 @@
     "dueTime": null,
     "recurring": null,
     "note": "Ticket #: 687685416",
-    "categories": ["Personal"]
+    "categories": [
+      {
+        "name": "Personal"
+      }
+    ]
   },
   {
     "id": 5,
@@ -75,7 +83,11 @@
     "dueTime": null,
     "recurring": "Monthly",
     "note": "www.electric-company.com",
-    "categories": ["Bills"]
+    "categories": [
+      {
+        "name": "Bills"
+      }
+    ]
   },
   {
     "id": 6,
@@ -88,7 +100,11 @@
     "dueTime": null,
     "recurring": null,
     "note": "probably timezone related.  see:\nhttps://stackoverflow.com/questions/7556591/is-the-javascript-date-object-always-one-day-off",
-    "categories": ["Bug"]
+    "categories": [
+      {
+        "name": "Bug"
+      }
+    ]
   },
   {
     "id": 7,
@@ -101,7 +117,11 @@
     "dueTime": null,
     "recurring": null,
     "note": "Not sure on this one, will have to look into the page load process. Its in the DB correctly.",
-    "categories": ["Bug"]
+    "categories": [
+      {
+        "name": "Bug"
+      }
+    ]
   },
   {
     "id": 8,
@@ -114,7 +134,11 @@
     "dueTime": null,
     "recurring": null,
     "note": null,
-    "categories": ["Feature"]
+    "categories": [
+      {
+        "name": "Feature"
+      }
+    ]
   },
   {
     "id": 9,
@@ -127,7 +151,11 @@
     "dueTime": null,
     "recurring": null,
     "note": null,
-    "categories": ["Feature"]
+    "categories": [
+      {
+        "name": "Feature"
+      }
+    ]
   },
   {
     "id": 10,
@@ -140,7 +168,11 @@
     "dueTime": null,
     "recurring": null,
     "note": null,
-    "categories": ["Feature"]
+    "categories": [
+      {
+        "name": "Feature"
+      }
+    ]
   },
   {
     "id": 11,
@@ -153,7 +185,11 @@
     "dueTime": null,
     "recurring": null,
     "note": null,
-    "categories": ["Bug"]
+    "categories": [
+      {
+        "name": "Bug"
+      }
+    ]
   },
   {
     "id": 12,
@@ -166,7 +202,11 @@
     "dueTime": null,
     "recurring": null,
     "note": null,
-    "categories": ["UX"]
+    "categories": [
+      {
+        "name": "UX"
+      }
+    ]
   },
   {
     "id": 13,
@@ -205,7 +245,11 @@
     "dueTime": null,
     "recurring": null,
     "note": null,
-    "categories": ["Feature"]
+    "categories": [
+      {
+        "name": "Feature"
+      }
+    ]
   },
   {
     "id": 16,
@@ -228,6 +272,10 @@
         "completed": false
       }
     ],
-    "categories": ["UX", "test"]
+    "categories": [
+      {
+        "name": "UX"
+      }
+    ]
   }
 ]

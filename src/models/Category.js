@@ -7,10 +7,8 @@ module.exports = (sequelize, DataTypes) => {
   })
 
   Category.associate = function (models) {
-    Category.belongsToMany(models.Todo, {
-      as: 'category',
-      through: 'TodoCategory',
-      foreignKey: 'categoryId'
+    Category.belongsTo(models.User, {
+      as: 'user'
     })
   }
 
