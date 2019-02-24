@@ -137,6 +137,30 @@ module.exports = {
       })
     }
   },
+  async updateCategories (req, res) {
+    const todoId = req.body.todoId
+    const categories = req.body.categories
+    try {
+      await Todo.update({
+        categories: categories
+      }, {
+        where:
+        {
+          id: todoId
+        }
+      }).then(result => {
+        let success = (result === 1)
+        console.log('0 = fail, 1 = success:', result)
+        res.status(200).send({
+          success: success
+        })
+      })
+    } catch (err) {
+      res.status(500).send({
+        error: 'update todo categories server error: ' + err.message
+      })
+    }
+  },
   async updateDueDate (req, res) {
     const todoId = req.body.todoId
     const dueDate = req.body.dueDate
