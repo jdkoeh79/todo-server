@@ -6,3 +6,6 @@ node_modules
 
 # Log files
 npm-debug.log*
+
+# my seed data (my todos to do to my Todos app)
+mytodos.json

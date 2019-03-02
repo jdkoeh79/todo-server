@@ -37,7 +37,7 @@ module.exports = (app) => {
     isAuthenticated,
     TodosController.updatePriority)
 
-    app.put('/todo/categories',
+  app.put('/todo/categories',
     isAuthenticated,
     TodosController.updateCategories)
 
