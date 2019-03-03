@@ -33,11 +33,11 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: null
     },
     items: {
-      type: DataTypes.JSON,
+      type: DataTypes.TEXT,
       defaultValue: null
     },
     categories: {
-      type: DataTypes.JSON,
+      type: DataTypes.TEXT,
       defaultValue: null
     }
   })

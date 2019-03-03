@@ -10,17 +10,20 @@ const todos = require('./todos.json')
 const categories = require('./categories.json')
 
 sequelize.sync({ force: true })
-    .then(() => {
-
+  .then(() => {
     Promise.all(users.map(u => User.create(u)))
-            .then(() => {
 
-            Promise.all(todos.map(t => Todo.create(t)))
-                    .then(() => {
+      .then(() => {
+        Promise.all(todos.map(todo => {
+          todo.items = JSON.stringify(todo.items)
+          todo.categories = JSON.stringify(todo.categories)
+          Todo.create(todo)
+        }))
 
-                        Promise.all(categories.map(c => Category.create(c)))
-                        .then(() => sequelize.close())
-                    })
-            })
+          .then(() => {
+            Promise.all(categories.map(c => Category.create(c)))
+            .then(() => sequelize.close())
+          })
+      })
     .catch(e => console.log(e))
-})
+  })

@@ -13,8 +13,12 @@ module.exports = {
       })
         .then((todos) => {
           todos.forEach(function (todo, i) {
-            todos[i].items = JSON.parse(todos[i].items)
-            todos[i].categories = JSON.parse(todos[i].categories)
+            try {
+              todos[i].items = JSON.parse(todos[i].items)
+              todos[i].categories = JSON.parse(todos[i].categories)
+            } catch (err) {
+              console.log('Todo.findAll', err.message)
+            }
             if (todos[i].categories === null) {
               todos[i].categories = []
             }
@@ -142,7 +146,7 @@ module.exports = {
     const categories = req.body.categories
     try {
       await Todo.update({
-        categories: categories
+        categories: JSON.stringify(categories)
       }, {
         where:
         {
@@ -235,7 +239,7 @@ module.exports = {
   },
   async updateItems (req, res) {
     const todoId = req.body.todoId
-    const items = req.body.items
+    const items = JSON.stringify(req.body.items)
     try {
       await Todo.update({
         items: items
